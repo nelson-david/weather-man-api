@@ -31,7 +31,6 @@ clothing_data = load_clothing_data('clothing_data.csv')
 
 @app.post("/api/v1/weather")
 def get_weather(location: Location):
-    print("LOCATION: ", location)
     url = f"https://api.weatherapi.com/v1/current.json?key={API_KEY}&q={location.latitude},{location.longitude}&aqi=no"
     response = requests.get(url)
     weather_data = response.json()
