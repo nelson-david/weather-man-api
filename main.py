@@ -3,9 +3,14 @@ from pydantic import BaseModel
 import requests
 import pandas as pd
 import random
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from the .env file
+load_dotenv()
 
 app = FastAPI()
-API_KEY = "85b6fefb68e749a9aba53727242609"
+API_KEY = os.getenv('API_KEY')
 
 
 @app.get("/")
